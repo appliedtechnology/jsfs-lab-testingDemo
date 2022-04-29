@@ -7,14 +7,7 @@ cd $SCRIPTPATH
 cd $SCRIPTPATH/mocha-test-setup
   echo 'Verifying moch-test-setup'
 
-  AUDITFIXDONE=false
-  AUDITFIXMESSAGE=''
-  auditresult=$(npm audit --silent)
-  if [[ "$auditresult" == *"address all issues"* ]]
-  then
-    auditresult=$(npm audit fix --force --silent)
-    AUDITFIXDONE=true
-  fi
+
 
   installresult=$(npm i --silent)
   if [[ "$installresult" == *"high"* ]]
@@ -32,25 +25,11 @@ cd $SCRIPTPATH/mocha-test-setup
     exit 1
   fi
 
-  if [ "$AUDITFIXDONE" = true ] ; then
-    echo "Dependencies audit done, fixed and the script still works - committing changes"
-    git add package*
-    git commit -m "Audit fixed by script"
-    git push
-    AUDITFIXMESSAGE='(Dependecies updated)'
-  fi
 
 cd $SCRIPTPATH/jest-test-setup
   echo 'Verifying jest-test-setup'
 
-  AUDITFIXDONE=false
-  AUDITFIXMESSAGE=''
-  auditresult=$(npm audit --silent)
-  if [[ "$auditresult" == *"address all issues"* ]]
-  then
-    auditresult=$(npm audit fix --force --silent)
-    AUDITFIXDONE=true
-  fi
+
 
   installresult=$(npm i --silent)
   if [[ "$installresult" == *"high"* ]]
@@ -68,16 +47,9 @@ cd $SCRIPTPATH/jest-test-setup
     exit 1
   fi
 
-  if [ "$AUDITFIXDONE" = true ] ; then
-    echo "Dependencies audit done, fixed and the script still works - committing changes"
-    git add package*
-    git commit -m "Audit fixed by script"
-    git push
-    AUDITFIXMESSAGE='(Dependecies updated)'
-  fi
 
 # cd back to where we came from
 cd - > /dev/null
 
-echo "Installation, linting and testing verified $AUDITFIXMESSAGE - OK"
+echo "Installation, linting and testing verified - OK"
 exit 0
