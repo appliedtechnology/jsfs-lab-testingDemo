@@ -28,7 +28,7 @@ At Salt you're expected to set up a test runner in each and every project. You'r
 
 In each lab we'll instruct whether you should set up a Mocha or a Jest test runner, and also if you need to install any further testing tools (like _Supertest_ for example).
 
-To create a basic testing setup with Mocha or Jest run the following command in the root of your project: `npm install [mocha/jest] --save-dev`. Then all you need to do is to create the test command described in the `package.json`s.
+To create a basic testing setup with Mocha or Jest run the following command in the root of your project: `npm install [mocha/jest] --save-dev`. Then all you need to do is to create the test command described in the `package.json` in this repo.
 
 ## This Repository
 
