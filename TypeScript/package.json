@@ -1,5 +1,5 @@
 {
-  "name": "mocha-test-setup",
+  "name": "jest-test-setup",
   "version": "1.0.0",
   "description": "Barebones application with Jest setup",
   "main": "index.js",
