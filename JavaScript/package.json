@@ -1,5 +1,5 @@
 {
-  "name": "mocha-test-setup",
+  "name": "js-test-setup",
   "version": "1.0.0",
   "description": "Barebones application with Jest setup",
   "main": "index.js",
@@ -8,12 +8,12 @@
   },
   "keywords": [
     "TDD",
-    "Mocha",
+    "Jest",
     "testing"
   ],
-  "author": "Adam Dolah",
+  "author": "Muhammad Ahsan Ayaz",
   "license": "ISC",
   "devDependencies": {
-    "jest": "^26.2.2"
+    "jest": "^26.6.3"
   }
 }
